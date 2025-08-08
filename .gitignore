@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+.env
+.venv/
+venv/
+env/
+
+# Packaging
+build/
+dist/
+*.egg-info/
+pip-wheel-metadata/
+
+# Testing
+.pytest_cache/
+.tox/
+.coverage
+coverage.xml
+htmlcov/
+
+# Type checkers & linters
+.mypy_cache/
+.ruff_cache/
+pyrightconfig.json
+
+# Editors/OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Project-specific
+tasks/
+
