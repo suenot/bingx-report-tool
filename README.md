@@ -61,19 +61,19 @@ Canonical columns: `time,type,details,amount,asset,symbol,note`.
 
 ```mermaid
 graph TD
-  A[Input .csv or .xlsx] --> B{Detect format}
-  B -- XLSX or misnamed CSV (PK) --> C[Read via openpyxl]
-  B -- CSV (text) --> D[Read via pandas.read_csv]
+  A[Input file] --> B{Detect format}
+  B --> C[Read with openpyxl]
+  B --> D[Read with pandas]
   C --> E[Normalize columns]
   D --> E[Normalize columns]
   E --> F[Save normalized CSV]
   E --> G[Compute metrics]
-  G --> H{--fee-rate?}
-  H -- yes --> I[Estimate Turnover]
-  H -- no --> J[Skip Turnover]
-  I --> K[Compute Net Profit (USDT, %)]
-  J --> K[Compute Net Profit (USDT)]
-  K --> L[Write text report]
+  G --> H{Fee rate set}
+  H --> I[Estimate turnover]
+  H --> J[Skip turnover]
+  I --> K[Compute net profit]
+  J --> K[Compute net profit]
+  K --> L[Write report]
 ```
 
 ### Example
